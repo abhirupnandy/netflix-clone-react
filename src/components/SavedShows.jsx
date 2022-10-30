@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { AiOutlineClose } from 'react-icons/ai';
 import { UserAuth } from '../context/AuthContext';
-import { db } from '../firebase';
+import { db } from '../firebase.config';
 import { updateDoc, doc, onSnapshot } from 'firebase/firestore';
 
 const SavedShows = () => {
