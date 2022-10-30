@@ -1,7 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { UserAuth } from '../context/AuthContext';
 
 const SignUp = () => {
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const { user, signUp } = UserAuth();
+	const navigate = useNavigate();
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		try {
+			await signUp(email, password);
+			navigate('/');
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	
 	return (
 		<div className='w-full h-screen'>
 			<img
@@ -14,9 +31,25 @@ const SignUp = () => {
 				<div className='max-w-[450px] h-[600px] mx-auto bg-black/75 text-white'>
 					<div className='max-w-[320px] mx-auto py-16'>
 						<h1 className='text-3xl font-bold '>Sign Up</h1>
-						<form className='w-full flex flex-col py-4'>
-							<input type='email' placeholder='Email' autoComplete='email' className='p-3 my-2 bg-gray-700 rounded ' />
-							<input type='password' placeholder='Password' autoComplete='current-password' className='p-3 my-2 bg-gray-700 rounded ' />
+						<form className='w-full flex flex-col py-4' onSubmit={handleSubmit}>
+							<input
+								type='email'
+								placeholder='Email'
+								autoComplete='email'
+								className='p-3 my-2 bg-gray-700 rounded '
+								onChange={(e) => {
+									setEmail(e.target.value);
+								}}
+							/>
+							<input
+								type='password'
+								placeholder='Password'
+								autoComplete='current-password'
+								className='p-3 my-2 bg-gray-700 rounded '
+								onChange={(e) => {
+									setPassword(e.target.value);
+								}}
+							/>
 							<button type='submit' className='bg-red-600 py-3 my-6 rounded font-bold'>
 								Sign Up
 							</button>
