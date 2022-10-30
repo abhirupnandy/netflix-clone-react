@@ -5,7 +5,6 @@ import Movie from './Movie';
 
 const Row = ({ title, fetchURL, rowID }) => {
 	const [movies, setMovies] = useState([]);
-	const [liked, setLiked] = useState(false);
 
 	useEffect(() => {
 		axios.get(fetchURL).then((response) => {
@@ -31,7 +30,7 @@ const Row = ({ title, fetchURL, rowID }) => {
 				<MdChevronLeft size='40' className='bg-white left-0 rounded-full absolute opacity-50 hover:opacity-80 cursor-pointer z-10 hidden group-hover:block' onClick={slideLeft} />
 				<div id={'slider' + rowID} className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'>
 					{movies.map((item, id) => (
-						<Movie item={item} key={id} liked={liked} />
+						<Movie item={item} key={id} />
 					))}
 				</div>
 				<MdChevronRight size='40' className='bg-white right-0 rounded-full absolute opacity-50 hover:opacity-80 cursor-pointer z-10 hidden group-hover:block' onClick={slideRight} />

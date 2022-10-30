@@ -1,11 +1,19 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 
 const ProtectedRoute = ({ children }) => {
-	const { authed } = UserAuth();
-	var navigate = useNavigate();
+	const { user } = UserAuth();
+	const navigate = useNavigate();
 
-	return authed === true ? children : navigate('/');
+	// check if user is logged in
+	if (user?.email) {
+		return children;
+	}
+	// if not logged in, redirect to login page
+	else {
+		navigate('/login');
+		return <Navigate to='/login' />;
+	}
 };
 
 export default ProtectedRoute;
