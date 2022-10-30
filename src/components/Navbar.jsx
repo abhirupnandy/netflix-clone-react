@@ -19,7 +19,7 @@ const Navbar = () => {
 	return (
 		<div className='flex items-center justify-between p-4 z-[100] w-full absolute'>
 			<Link to='/'>
-				<h1 className='text-red-600 text-4xl font-bold cursor-pointer'>NETFLIX CLONE</h1>
+				<h1 className='text-red-600 text-4xl font-bold cursor-pointer'>NETFLIX CLONE APP</h1>
 			</Link>
 			{user?.email ? (
 				<div>
