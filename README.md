@@ -1,7 +1,7 @@
-# NETFLIX CLONE APP
+# NETFLIX Clone App
 
-### My first React App with Firebase
+This app is a tutorial react app with firebase authentication and firestore functionalities.
 
-This app is a tutorial based app made only for educational purpuses.
+This app is made for educational purposes only.
 
-#### Testing github auto deploy
+Please visit live version here -> [NETFLIX Clone App](https://netflix.abhirupnandy.click/ "NETFLIX Clone App")
