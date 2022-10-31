@@ -4,7 +4,7 @@ This app is a tutorial react app with firebase authentication and firestore func
 
 This app is made for educational purposes only.
 
-Please visit live version here -> [NETFLIX Clone App](https://netflix.abhirupnandy.click/ "NETFLIX Clone App")
+Please visit live version here -> [NETFLIX Clone App](https://netclone.abhirupnandy.click/ "NETFLIX Clone App")
 
 
 ------------
