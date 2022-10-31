@@ -15,3 +15,4 @@ Please visit live version here -> [NETFLIX Clone App](https://netflix.abhirupnan
 3. Fix mobile UI for Navbar.
 4. Add small footer section.
 5. Add Display Name to Account page.
+6. Fix like button for already saved shows
